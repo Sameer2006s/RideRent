@@ -1,0 +1,6 @@
+import { X, Users, Fuel, Cog, Check } from 'lucide-react';
+
+export default function CarDetailsModal({ car, onClose, onBook }) {
+  if (!car) return null;
+  return <div className="modal-backdrop" onMouseDown={e => e.target === e.currentTarget && onClose()}><div className="details-modal" role="dialog" aria-modal="true" aria-labelledby="details-title"><button className="modal-close" onClick={onClose} aria-label="Close details"><X /></button><div className="details-image"><img src={car.image} alt={car.name} /><span className={`availability ${car.available ? '' : 'unavailable'}`}><i />{car.available ? 'Available now' : 'Coming soon'}</span></div><div className="details-content"><span className="section-kicker">{car.category} / RIDE DETAILS</span><h2 id="details-title">{car.name}</h2><div className="details-price">₹{car.price.toLocaleString('en-IN')} <small>/ day</small></div><div className="details-specs"><span><Users /> <b>{car.seats}</b> seats</span><span><Fuel /> <b>{car.fuel}</b></span><span><Cog /> <b>{car.transmission}</b></span></div><p>{car.description}</p><div className="feature-list">{car.features.map(feature => <span key={feature}><Check size={14} /> {feature}</span>)}</div><button className="button button-accent full-width" disabled={!car.available} onClick={() => onBook(car)}>Rent this car</button></div></div></div>;
+}
