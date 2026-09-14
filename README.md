@@ -2,6 +2,10 @@
 
 A modern responsive no-backend car rental website built with HTML5, CSS3, and vanilla JavaScript. Booking is handled through a Google Form and responses can be stored in Google Sheets.
 
+## Deploy link 
+https://ride-rent-psi.vercel.app/
+paste and run , use website .
+
 ## Run locally
 
 Open the project folder in VS Code and open `index.html` directly, or use Live Server. Internet access is required for the starter remote images, Google Fonts, and Font Awesome. The site is static and needs no build step.
